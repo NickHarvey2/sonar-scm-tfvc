@@ -7,9 +7,9 @@
 using System;
 using System.IO;
 using System.Text;
-using Microsoft.TeamFoundation.Client;
 using Microsoft.TeamFoundation.VersionControl.Client;
 using System.Net;
+using Microsoft.VisualStudio.Services.Common;
 
 namespace SonarSource.TfsAnnotate
 {
@@ -37,21 +37,21 @@ namespace SonarSource.TfsAnnotate
                 var password = Console.ReadLine();
                 var pat = Console.ReadLine();
 
-                TfsClientCredentials credentials;
+				VssCredentials credentials;
 
                 if (!String.IsNullOrEmpty(pat))
                 {
-                    credentials = new TfsClientCredentials(new BasicAuthCredential(new NetworkCredential("", pat)));
+                    credentials = new VssCredentials(new VssBasicCredential(new NetworkCredential("", pat)));
                 }
                 else if (!String.IsNullOrEmpty(username) || !String.IsNullOrEmpty(password))
                 {
-                    credentials = new TfsClientCredentials(new WindowsCredential(new NetworkCredential(username, password)));
+                    credentials = new VssCredentials(new WindowsCredential(new NetworkCredential(username, password)));
                 }
                 else
                 {
-                    credentials = new TfsClientCredentials(true);
+                    credentials = new VssCredentials(true);
                 }
-                credentials.AllowInteractive = false;
+                //credentials.AllowInteractive = false;
 
                 Console.WriteLine("Enter the Collection URI");
                 Console.Out.Flush();
