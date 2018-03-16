@@ -12,6 +12,8 @@
       <outputDirectory>/</outputDirectory>
       <includes>
         <include>SonarTfsAnnotate.exe</include>
+        <include>SonarTfsAnnotate.exe.config</include>
+        <include>*.dll</include>
       </includes>
     </fileSet>
   </fileSets>

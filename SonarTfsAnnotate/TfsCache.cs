@@ -11,7 +11,6 @@ using Microsoft.TeamFoundation.VersionControl.Client;
 using Microsoft.VisualStudio.Services.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace SonarSource.TfsAnnotate
 {
@@ -97,7 +96,7 @@ namespace SonarSource.TfsAnnotate
 
         private static bool IsEmail(string email)
         {
-            return email.Contains('@');
+            return email.Contains("@");
         }
 
         public void Dispose()

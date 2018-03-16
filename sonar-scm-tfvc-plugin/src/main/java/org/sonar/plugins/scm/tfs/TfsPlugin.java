@@ -13,18 +13,15 @@ import java.util.List;
 
 public class TfsPlugin extends SonarPlugin {
 
-  @Override
-  public List getExtensions() {
-    ImmutableList.Builder builder = ImmutableList.builder();
+	@Override
+	public List getExtensions() {
+		ImmutableList.Builder builder = ImmutableList.builder();
 
-    builder.add(
-      TfsScmProvider.class,
-      TfsBlameCommand.class,
-      TfsConfiguration.class);
+		builder.add(TfsScmProvider.class, TfsBlameCommand.class, TfsConfiguration.class);
 
-    builder.addAll(TfsConfiguration.getProperties());
+		builder.addAll(TfsConfiguration.getProperties());
 
-    return builder.build();
-  }
+		return builder.build();
+	}
 
 }

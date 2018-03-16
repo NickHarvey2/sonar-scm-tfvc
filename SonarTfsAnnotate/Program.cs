@@ -51,7 +51,6 @@ namespace SonarSource.TfsAnnotate
                 {
                     credentials = new VssCredentials(true);
                 }
-                //credentials.AllowInteractive = false;
 
                 Console.WriteLine("Enter the Collection URI");
                 Console.Out.Flush();
